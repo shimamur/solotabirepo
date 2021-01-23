@@ -12,13 +12,13 @@ gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
 
 group :development, :test do
-  gem 'sqlite3', '1.4.1'
-  gem 'byebug',  '11.0.1': [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3'
+  gem 'byebug',  platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
   gem 'web-console',           '4.0.1'
-  gem 'listen',                '3.1.5'
+  gem 'listen',                '3.4.1 '
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
 end
@@ -29,5 +29,9 @@ group :test do
   gem 'webdrivers',         '4.1.2'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+group :production do
+  gem 'pg', '1.1.4'
+end
+
+# Windows ではタイムゾーン情報用の tzinfo-data gem を含める必要があります
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
