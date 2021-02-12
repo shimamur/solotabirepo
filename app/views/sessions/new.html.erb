@@ -1,32 +1,25 @@
 <% provide(:title, "ログイン") %>
-<div class="container form-container login-container">
-  <div class="row">
-    <div class="col">
-      <div class="form-logo-img">
-        <%= link_to image_tag('lantern_lantern_logo.png', width: 100), root_path, class: "logo-img" %>
-      </div>
-      <h1 class="form-title">ログイン</h1>
-      <%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+<div class="loginwrapper">
+      <h1>ログイン</h1>
+      <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
 
-        <div class="form-group">
-          <%= form.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+        <div class="formbox">
+          <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
         </div>
 
-        <div class="form-group">
-          <%= form.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+        <div class="formbox">
+          <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
         </div>
 
-        <div class="form-group form-check">
-          <%= form.check_box :remember_me, class: 'form-check-input' %>
-          <%= form.label :remember_me, 'ログインしたままにする', class: 'form-check-label' %>
+        <div>
+          <%= f.check_box :remember_me, class: 'form-check-input' %>
+          <%= f.label :remember_me, 'ログインしたままにする', class: 'form-check-label' %>
         </div>
 
-        <div class="form-group">
-          <%= form.submit "ログイン", class: "btn btn-info btn-lg form-submit" %>
+        <div >
+          <%= f.submit "ログイン", class: "loginbtn" %>
         </div>
       <% end %>
 
-      <p class="form-go-to-signup-or-login">新しくはじめる方は<%= link_to "こちら", signup_path %></p>
-    </div>
-  </div>
+      <p>新しくはじめる方は<%= link_to "こちら", signup_path %></p>
 </div>
