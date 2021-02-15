@@ -1,3 +1,9 @@
+<% if logged_in? %>
+  <div class="userbox">
+        <%= render 'shared/user_info' %>
+        <%= render 'shared/post_form' %>
+  </div>
+<% else %>
 <div class="jumbotron jumbotron-fluid jumbotron-extend">
   <div class="container-fluid">
       <div class="container">
@@ -21,4 +27,5 @@
       </div>
  </div>
 </div>
+<% end %>
 

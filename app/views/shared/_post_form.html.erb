@@ -1,0 +1,9 @@
+<div class="postform">
+<%= form_with(model: @post, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div>
+    <%= f.text_area :content, class: "formbox", placeholder: "新しい投稿" %>
+  </div>
+  <%= f.submit "投稿する", class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts
   end
   
   def edit
@@ -39,14 +40,6 @@ private
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-    
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
     end
     
     def correct_user

@@ -107,6 +107,12 @@ header{
   justify-content: center;
 }
 
+.showpost{
+  padding: 40px;
+  margin: 40px;
+}
+
+
 
 // エディット
 .editform{
@@ -122,6 +128,17 @@ header{
 
 .gravatar_edit{
  margin: 15px auto;
+}
+
+// 投稿フォーム
+.userinfo{
+  padding: 40px;
+  margin: 40px;
+}
+
+.postform{
+  padding: 40px;
+  margin: 40px;
 }
 
 

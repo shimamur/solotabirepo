@@ -1,7 +1,15 @@
 <% provide(:title, @user.name) %>
 <div class="userbox">
-  <div>
+  <div class="userinfo">
     <%= gravatar_for @user %><br>
     <%= @user.name %>
+  </div>
+  <div class="showpost">
+    <% if @user.posts.any? %>
+      <h3>あなたの投稿 (<%= @user.posts.count %>)</h3>
+      <ol class="">
+        <%= render @posts %>
+      </ol>
+    <% end %>
   </div>
 </div>
