@@ -16,7 +16,8 @@ class User < ApplicationRecord
   has_secure_password
   validates :password,
     presence: true,
-    length: { minimum: 6 }
+    length: { minimum: 6 },
+    allow_nil: true
     
  class << self
    def new_token
@@ -29,21 +30,21 @@ class User < ApplicationRecord
       BCrypt::Password.create(string, cost: cost)
     end
     
-    def remember
+ end
+ 
+  def remember
       self.remember_token = User.new_token
       update_attribute(:remember_digest, User.digest(remember_token))
-    end
+  end
     
-    def authenticated?(remember_token)
+  def authenticated?(remember_token)
       return false if remember_digest.nill?
       BCrypt::Password.new(remember_digest).is_password?(remember_token)
-    end
-    
-    def forget
+  end
+ 
+  def forget
       update_attribute(:remember_digest, nil)
-    end
-    
- end 
+  end
     
 private
     def downcase_email

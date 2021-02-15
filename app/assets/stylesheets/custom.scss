@@ -32,6 +32,7 @@ header{
   color: white;
   font-size: 24px;
   text-decoration: none;
+  margin-left: 24px;
 }
 
 
@@ -69,7 +70,9 @@ header{
 
 
 // ホーム
-
+.signuptn{
+  line-height: 36px;
+}
 
 
 // ログインフォーム
@@ -98,8 +101,31 @@ header{
   cursol: pointer;
 }
 
-// 新規登録フォーム
+// マイページ
+.userbox{
+  display: flex;
+  justify-content: center;
+}
 
+
+// エディット
+.editform{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.editform div input{
+  margin-top: 0;
+}
+
+.gravatar_edit{
+ margin: 15px auto;
+}
 
 
 // フッター
+footer{
+  text-align: center;
+}
