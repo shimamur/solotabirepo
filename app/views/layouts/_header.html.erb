@@ -8,6 +8,7 @@
         <% if logged_in? %>
           <li><%= link_to "投稿する", root_path%></li>
           <li><%= link_to "マイページ", current_user %></li>
+          <li><%= link_to "投稿一覧", about_path %></li>
           <li><%= link_to "設定", edit_user_path(current_user) %></li>
           <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>

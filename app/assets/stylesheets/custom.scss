@@ -113,6 +113,23 @@ header{
 }
 
 
+// 投稿一覧
+.japan{
+  height: 100vh;
+  background-image: url("japanmap.png");
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.japan ul{
+  list-style: none;
+}
+
+.japan ul li{
+  display: inline-block;
+}
+
 
 // エディット
 .editform{
